@@ -1,6 +1,6 @@
 {
   "name": "node-rootdir",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.lib.js",
   "types": "index.d.ts",
   "repository": "git@github.com:fwh1990/node-rootdir.git",
