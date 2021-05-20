@@ -1,7 +1,7 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import search from './search.js';
+import * as search from './search.js';
 
 const currentRoot = dirname(fileURLToPath(import.meta.url));
 
-export const getRootDir = search(currentRoot, true);
+export const getRootDir = search.search(currentRoot, true);

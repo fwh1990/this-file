@@ -30,7 +30,7 @@ export interface EntryDir {
   source: string;
 }
 
-export default (currentRoot: string, isESM: boolean) => {
+export const search = (currentRoot: string, isESM: boolean) => {
   return (pkgName: string, entryDir: EntryDir) => {
     const dir = searchParent(currentRoot, pkgName);
     const sourceDir = resolve(dir, entryDir.source);
