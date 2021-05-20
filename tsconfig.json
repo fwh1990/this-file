@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+    "target": "ES2016",
+    "module": "ES2020",
+    "allowJs": false,
+    "declaration": true,
+    "rootDir": ".",
+    "importHelpers": true,
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

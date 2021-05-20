@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+dist/
+*.log
+node_modules/
+coverage
+.nyc_output
+TODO
+*.js
+*.d.ts
+*.mjs

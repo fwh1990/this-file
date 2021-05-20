@@ -1,0 +1,27 @@
+{
+  "name": "node-rootdir",
+  "version": "0.0.1",
+  "main": "index.lib.js",
+  "types": "index.d.ts",
+  "repository": "git@github.com:fwh1990/node-rootdir.git",
+  "author": "原罪",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "require": "./index.lib.js",
+      "import": "./index.mjs"
+    }
+  },
+  "files": [
+    "package.json",
+    "index.mjs",
+    "index.lib.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/node": "^15.3.1",
+    "typescript": "^4.2.4"
+  }
+}
