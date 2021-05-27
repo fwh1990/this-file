@@ -11,14 +11,8 @@ yarn add node-rootdir
 # Usage
 
 ```typescript
-import { getRootDir } from 'node-rootdir';
+import { getDirName, getFileName } from 'node-rootdir';
 
-const rootDir = getRootDir('YOUR_NODE_MODULES_PACKAGE_NAME', {
-  source: './src',
-  esmodule: './es',
-  commonjs: './lib',
-});
+const __filename = getFileName();
+const __dirname = getDirName();
 ```
-
-For development or testing, you will get `/xxx/yyy/zzz/YOUR_NODE_MODULES_PACKAGE_NAME/src`.
-After publish to npm, you will get `/xxx/yyy/zzz/YOUR_NODE_MODULES_PACKAGE_NAME/{es|lib}`, es or lib, it depends on user.

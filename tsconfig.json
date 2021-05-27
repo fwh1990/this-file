@@ -5,6 +5,7 @@
     "module": "ES2020",
     "allowJs": false,
     "declaration": true,
+    "outDir": "./build",
     "rootDir": ".",
     "importHelpers": true,
 
@@ -29,6 +30,5 @@
 
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "include": ["index.ts"]
+  }
 }

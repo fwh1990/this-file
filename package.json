@@ -1,32 +1,35 @@
 {
-  "name": "node-rootdir",
-  "version": "0.0.7",
-  "main": "index.lib.js",
-  "types": "index.d.ts",
+  "name": "this-file",
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
   "repository": "git@github.com:fwh1990/node-rootdir.git",
   "author": "原罪",
   "license": "MIT",
   "exports": {
     ".": {
-      "require": "./index.lib.js",
-      "import": "./index.mjs"
-    }
+      "require": "./lib/index.js",
+      "import": "./es/index.js"
+    },
+    "./": "./"
   },
   "scripts": {
-    "prepublishOnly": "sh ./prepublish.sh"
+    "prepublishOnly": "ts-prepublish",
+    "test": "sh ./scripts/test.sh"
   },
   "files": [
     "package.json",
-    "index.mjs",
-    "index.lib.js",
-    "index.d.ts",
-    "search.d.ts",
-    "search.js",
+    "es",
+    "lib",
     "LICENSE",
     "README.md"
   ],
   "devDependencies": {
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.3.1",
+    "jest": "^27.0.1",
+    "ts-node": "^10.0.0",
+    "ts-prepublish": "^2.0.0",
     "typescript": "^4.2.4"
   }
 }
