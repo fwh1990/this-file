@@ -11,8 +11,9 @@ yarn add this-file
 # Usage
 
 ```typescript
-import { getDirName, getFileName } from 'this-file';
+import { getDirName, getFileName, getRequire } from 'this-file';
 
 const __filename = getFileName();
 const __dirname = getDirName();
+const require = getRequire();
 ```
