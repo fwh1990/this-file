@@ -33,7 +33,7 @@ const parseErrorToFileName = (e: Error) => {
   const initiator: string = e.stack!.split('\n')[2]!;
 
   let path = initiator.match(reg)![1]!;
-  if (path.indexOf('file') === 0) {
+  if (path.indexOf('file://') === 0) {
     path = fileURLToPath(path);
   }
 
