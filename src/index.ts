@@ -1,7 +1,7 @@
 import { platform } from 'os';
 import { dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
-import { createRequire as _createRequire } from 'module';
+import { createRequire } from 'module';
 
 export const getDirName = () => {
   try {
@@ -20,11 +20,11 @@ export const getFileName = () => {
 };
 
 export const getRequire = () => {
-  if (typeof require === 'undefined') {
-    return _createRequire(pathToFileURL(getFileName()));
+  try {
+    throw new Error();
+  } catch (e) {
+    return createRequire(pathToFileURL(parseErrorToFileName(e)));
   }
-
-  return require;
 };
 
 const reg = /([^\(\s]+):\d+:\d+\)?$/;
