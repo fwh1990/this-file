@@ -23,7 +23,7 @@ export const createContext = () => {
         ((requireContext = createRequire(pathToFileURL(filePath))), requireContext)
       );
     },
-  };
+  } as const;
 };
 
 const reg = /([^\(\s]+):\d+:\d+\)?$/;
