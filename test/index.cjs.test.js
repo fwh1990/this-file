@@ -1,14 +1,15 @@
-const { getFileName, getDirName, getRequire } = require('./index');
+const { createContext } = require('./index');
+
+const context = createContext();
 
 it('match filename', () => {
-  expect(getFileName()).toEqual(__filename);
+  expect(context.__filename).toEqual(__filename);
 });
 
 it('match dirname', () => {
-  expect(getDirName()).toEqual(__dirname);
+  expect(context.__dirname).toEqual(__dirname);
 });
 
 it('require commonjs file', () => {
-  const require = getRequire();
-  expect(require('./fixture.cjs').x).toEqual(123);
+  expect(context.require('./fixture.cjs').x).toEqual(123);
 });

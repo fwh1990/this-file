@@ -3,28 +3,27 @@ import { dirname } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
 import { createRequire } from 'module';
 
-export const getDirName = () => {
-  try {
-    throw new Error();
-  } catch (e) {
-    return dirname(parseErrorToFileName(e));
-  }
-};
+export const createContext = () => {
+  let filePath: string, dirPath: string, requireContext: NodeRequire;
 
-export const getFileName = () => {
   try {
     throw new Error();
   } catch (e) {
-    return parseErrorToFileName(e);
+    filePath = parseErrorToFileName(e);
   }
-};
 
-export const getRequire = () => {
-  try {
-    throw new Error();
-  } catch (e) {
-    return createRequire(pathToFileURL(parseErrorToFileName(e)));
-  }
+  return {
+    __filename: filePath,
+    get __dirname() {
+      return dirPath || ((dirPath = dirname(filePath)), dirPath);
+    },
+    get require() {
+      return (
+        requireContext ||
+        ((requireContext = createRequire(pathToFileURL(filePath))), requireContext)
+      );
+    },
+  };
 };
 
 const reg = /([^\(\s]+):\d+:\d+\)?$/;
