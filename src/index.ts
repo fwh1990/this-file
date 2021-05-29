@@ -13,8 +13,8 @@ export const createContext = () => {
   }
 
   return {
-    __filename: filePath,
-    get __dirname() {
+    filename: filePath,
+    get dirname() {
       return dirPath || ((dirPath = dirname(filePath)), dirPath);
     },
     get require() {

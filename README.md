@@ -17,12 +17,12 @@ import { createContext } from 'this-file';
 const context = createContext();
 
 // CJS
-context.__filename IS __filename
-context.__dirname IS __dirname
+context.filename IS __filename
+context.dirname IS __dirname
 context.require IS require
 
 // ESM
-context.__filename IS url.fileURLToPath(import.meta.url)
-context.__dirname IS path.dirname(context.__filename)
+context.filename IS url.fileURLToPath(import.meta.url)
+context.dirname IS path.dirname(context.__filename)
 context.require IS module.createContext(import.meta.url)
 ```
