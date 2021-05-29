@@ -23,6 +23,6 @@ context.require IS require
 
 // ESM
 context.filename IS url.fileURLToPath(import.meta.url)
-context.dirname IS path.dirname(context.__filename)
+context.dirname IS path.dirname(context.filename)
 context.require IS module.createContext(import.meta.url)
 ```
