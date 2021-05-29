@@ -11,9 +11,18 @@ yarn add this-file
 # Usage
 
 ```typescript
-import { getDirName, getFileName, getRequire } from 'this-file';
+// In per file
+import { createContext } from 'this-file';
 
-const __filename = getFileName();
-const __dirname = getDirName();
-const require = getRequire();
+const context = createContext();
+
+// CJS
+context.__filename IS __filename
+context.__dirname IS __dirname
+context.require IS require
+
+// ESM
+context.__filename IS url.fileURLToPath(import.meta.url)
+context.__dirname IS path.dirname(context.__filename)
+context.require IS module.createContext(import.meta.url)
 ```
