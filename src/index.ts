@@ -15,13 +15,10 @@ export const createContext = () => {
   return {
     filename: filePath,
     get dirname() {
-      return dirPath || ((dirPath = dirname(filePath)), dirPath);
+      return dirPath || (dirPath = dirname(filePath));
     },
     get require() {
-      return (
-        requireContext ||
-        ((requireContext = createRequire(pathToFileURL(filePath))), requireContext)
-      );
+      return requireContext || (requireContext = createRequire(pathToFileURL(filePath)));
     },
   } as const;
 };
@@ -30,8 +27,8 @@ const reg = /([^\(\s]+):\d+:\d+\)?$/;
 
 const parseErrorToFileName = (e: Error) => {
   const initiator: string = e.stack!.split('\n')[2]!;
-
   let path = initiator.match(reg)![1]!;
+
   if (path.indexOf('file://') === 0) {
     path = fileURLToPath(path);
   }
